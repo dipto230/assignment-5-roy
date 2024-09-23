@@ -2,66 +2,67 @@ let totalBalance = 5500;
 let donationBalance = 0;
 const history = [];
 
-// DOM elements
+
 const totalBalanceEl = document.getElementById('total-balance'); 
 const donationBalanceEl = document.getElementById('donation-balance'); 
 const donationAmountEl = document.getElementById('donation-amount');
-const historyListEl = document.getElementById('historyListEl');  // Corrected ID
+const historyListEl = document.getElementById('historyListEl'); 
 const donationSection = document.getElementById('donation-section');
-const historySection = document.getElementById('historySection'); // Corrected ID
+const historySection = document.getElementById('historySection'); 
 const donationTab = document.getElementById('donationBtn');
 const historyTab = document.getElementById('historyBtn');
 
-// Donation button event listener
+
 document.getElementById('Donate-noyakali').addEventListener('click', function(event) {
-    const amount = parseInt(donationAmountEl.value); // Parse amount input
-    event.preventDefault(); // Prevent form submission or default behavior
+    const amount = parseInt(donationAmountEl.value); 
+    event.preventDefault(); 
 
     if (isNaN(amount) || amount <= 0 || amount > totalBalance) {
         alert('Please enter a valid donation amount.');
         return; 
     }
     
-    // Update balances
+   
     donationBalance += amount;
     totalBalance -= amount;
     
-    // Add to history
+   
     const now = new Date();
     history.push({ amount, time: now.toLocaleString() });
     
-    // Update UI
-    donationBalanceEl.textContent = `${donationBalance} BDT`; // Update donation balance
-    totalBalanceEl.textContent = `${totalBalance} BDT`; // Update total balance
+   
+    donationBalanceEl.textContent = `${donationBalance} BDT`; 
+    totalBalanceEl.textContent = `${totalBalance} BDT`; 
     
-    donationAmountEl.value = ''; // Clear input field
+    donationAmountEl.value = ''; 
 
-    renderHistory(); // Update history list
+    renderHistory(); 
 });
 
-// Tab switching logic for Donation Tab
+
 donationTab.addEventListener('click', function() {
     donationSection.classList.remove('hidden');
-     window.location.href='/index.html';
-    historySection.classList.add('hidden'); // Hide history section
-    donationTab.classList.add('bg-lime-400'); // Highlight Donation Tab
-    historyTab.classList.remove('bg-lime-400'); // Remove highlight from History Tab
+    
+    historySection.classList.add('hidden');
+    donationTab.classList.add('bg-lime-400'); 
+    historyTab.classList.remove('bg-lime-400'); 
 });
 
-// Tab switching logic for History Tab
+
 historyTab.addEventListener('click', function() {
+   
+
     donationSection.classList.add('hidden');
-   window.location.href='/histroy.html';
-    historySection.classList.remove('hidden'); // Show history section
-    historyTab.classList.add('bg-lime-400'); // Highlight History Tab
-    donationTab.classList.remove('bg-lime-400'); // Remove highlight from Donation Tab
+    historySection.classList.remove('hidden'); 
+    historyTab.classList.add('bg-lime-400');
+    donationTab.classList.remove('bg-lime-400'); 
+  
+    renderHistory();
+  });
 
-    renderHistory(); // Render the updated history
-});
 
-// Function to render the history list dynamically
 function renderHistory() {
-    historyListEl.innerHTML = ''; // Clear existing history list
+    historyListEl.innerHTML = ''; 
 
     if (history.length > 0) {
         history.forEach(item => {
@@ -71,12 +72,70 @@ function renderHistory() {
                 <p><strong>Date:</strong> ${item.time}</p>
                 <p><strong>Amount:</strong> ${item.amount} BDT</p>
             `;
-            historyListEl.appendChild(historyItem); // Append history item to list
+            historyListEl.appendChild(historyItem);
         });
     } else {
-        historyListEl.innerHTML = '<p>No donation history available.</p>'; // Show message if no history
+        historyListEl.innerHTML = '<p>No donation history available.</p>'; 
     }
 }
+
+// Variables for Feni section
+let feniDonationBalance = 0; // Track donation balance for Feni
+const donationAmountFeniEl = document.getElementById('donation-amount-feni');
+const donationBalanceFeniEl = document.getElementById('donation-balance-feni');
+
+// Event listener for the Feni donation button
+document.getElementById('Donate-feni').addEventListener('click', function(event) {
+    const amount = parseInt(donationAmountFeniEl.value); 
+    event.preventDefault(); 
+
+    if (isNaN(amount) || amount <= 0 || amount > totalBalance) {
+        alert('Please enter a valid donation amount.');
+        return; 
+    }
+    
+    // Update the balances
+    feniDonationBalance += amount;
+    totalBalance -= amount;
+    
+    // Add the donation to the history
+    const now = new Date();
+    history.push({ amount, time: now.toLocaleString(), donationType: 'Feni' });
+    
+    // Update the displayed balances
+    donationBalanceFeniEl.textContent = `${feniDonationBalance} BDT`; 
+    totalBalanceEl.textContent = `${totalBalance} BDT`; 
+    
+    // Clear the input field
+    donationAmountFeniEl.value = ''; 
+
+    // Render the history
+    renderHistory(); 
+});
+
+// Modify the renderHistory function to show donation type (Feni or Noakhali)
+function renderHistory() {
+    historyListEl.innerHTML = ''; 
+
+    if (history.length > 0) {
+        history.forEach(item => {
+            const historyItem = document.createElement('div');
+            historyItem.classList.add('bg-gray-200', 'p-2', 'rounded-lg');
+            historyItem.innerHTML = `
+                <p><strong>Date:</strong> ${item.time}</p>
+                <p><strong>Amount:</strong> ${item.amount} BDT</p>
+                <p><strong>Donation Type:</strong> ${item.donationType}</p>
+            `;
+            historyListEl.appendChild(historyItem);
+        });
+    } else {
+        historyListEl.innerHTML = '<p>No donation history available.</p>'; 
+    }
+}
+
+
+
+
 
 
 

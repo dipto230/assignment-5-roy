@@ -9,8 +9,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 
+
 </head>
 <body>
+  <a href="history.html"></a>
     <header class="nav-section">
 
      
@@ -52,53 +54,76 @@
     <main>
         <div class="main-section space-x-4">
             <button id="donationBtn" class="btn bg-white text-black border-2 border-green-500 w-40 h-14" onclick="toggleButton('donation')">Donation</button>
-            <!-- <button id="historyBtn" class="btn bg-white text-black border-2 border-green-500  w-40 h-14" onclick="toggleButton('history')">History</button> -->
-            <button id="historyBtn" class="btn bg-white text-black border-2 border-green-500 w-40 h-14" onclick="window.location.href='history.html'">History</button>
+            <button id="historyBtn" class="btn bg-white text-black border-2 border-green-500  w-40 h-14" onclick="toggleButton('history')">History</button> 
+          
         </div>
 
      
 
-     <div id="noyakhali-card" class=" hidden   flex flex-col md:flex-row border-dotted border-2 border-blue-300 rounded-lg p-6 bg-white">
-    
+    <div id="noyakhali-card" class=" hidden   flex flex-col md:flex-row border-dotted border-2 border-blue-300 rounded-lg p-6 bg-white">
         <div class="md:w-1/2">
         <img src="assets/noakhali.png" alt="">
         </div>
-      
-        
         <div class="md:w-1/2 md:pl-6 mt-6 md:mt-0">
-          
           <div class="flex items-center space-x-2 mb-4">
             <img src="assets/coin.png" alt="">
             <span id="donation-balance" class="font-semibold text-lg">0 BDT</span>
-            
           </div>
-      
-          
           <h3 class="text-xl font-bold mb-4 text-black">Donate for Flood at Noakhali, Bangladesh</h3>
-      
-          
-          <p id="noyakali-donation-description" class=" mb-6">
+       <p id="noyakali-donation-description" class=" mb-6">
             The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster. Every contribution, big or small, makes a difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.
           </p>
-      
-          
-          <div class="donation-filed">
-           
-            <input id="donation-amount" class="donation-filed" type="number" placeholder="Write Donation Amount">
-            
-          </div>
+       <div class="donation-filed">
+           <input id="donation-amount" class="donation-filed" type="number" placeholder="Write Donation Amount">
+             </div>
           <button id="Donate-noyakali" class=" text-black font-bold px-6 py-2 rounded-lg hover:bg-lime-400 bt-6">
             Donate Now
-          </button>
-       
-
+          </button> 
           
         </div>
-      </div>
+      </div >
+      <div id="noyakhali-card" class=" hidden   flex flex-col md:flex-row border-dotted border-2 border-blue-300 rounded-lg p-6 bg-white">
+        <div class="md:w-1/2">
+        <img  class="w-[500px] h-[400px]"  src="assets/feni.png" alt="">
+        </div>
+        <div class="md:w-1/2 md:pl-6 mt-6 md:mt-0">
+          <div class="flex items-center space-x-2 mb-4">
+            <img src="assets/coin.png" alt="">
+            <span id="donation-balance-feni" class="font-semibold text-lg">0 BDT</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-black">Donate for Flood Relief in Feni,Bangladesh</h3>
+       <p id="noyakali-donation-description" class=" mb-6">
+        The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.
+          </p>
+       <div class="donation-filed">
+           <input id="donation-amount-feni" class="donation-filed" type="number" placeholder="Write Donation Amount">
+             </div>
+          <button id="Donate-feni" class=" text-black font-bold px-6 py-2 rounded-lg hover:bg-lime-400 bt-6">
+            Donate Now
+          </button> 
+          
+        </div>
+      </div >
+
+      
+
+
+
+
+      
+
+
+
+
+
+
+
+
 
     </main>
     <script src="js/btn.js"></script>
     <script src="js/donate.js"></script>
+    
     
 
     
