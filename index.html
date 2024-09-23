@@ -48,8 +48,59 @@
       <!-- navbar-ends-here -->
     </header>
 
+    <main>
+        <div class="main-section space-x-4">
+            <button id="donationBtn" class="btn bg-white text-black border-2 border-green-500 w-40 h-14" onclick="toggleButton('donation')">Donation</button>
+            <button id="historyBtn" class="btn bg-white text-black border-2 border-green-500  w-40 h-14" onclick="toggleButton('history')">History</button>
+        </div>
+
+     <!-- card-section-start-here -->
+
+     <div id="noyakhali-card" class="flex flex-col md:flex-row border-dotted border-2 border-blue-300 rounded-lg p-6 bg-white">
+    
+        <div class="md:w-1/2">
+        <img src="assets/noakhali.png" alt="">
+        </div>
+      
+        
+        <div class="md:w-1/2 md:pl-6 mt-6 md:mt-0">
+          
+          <div class="flex items-center space-x-2 mb-4">
+            <img src="assets/coin.png" alt="">
+            <span class="font-semibold text-lg">0 BDT</span>
+          </div>
+      
+          
+          <h3 class="text-xl font-bold mb-4 text-black">Donate for Flood at Noakhali, Bangladesh</h3>
+      
+          
+          <p id="noyakali-donation-description" class=" mb-6">
+            The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster. Every contribution, big or small, makes a difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.
+          </p>
+      
+          
+          <div class="donation-filed">
+           
+            <input class="donation-filed" type="text" placeholder="Write Donation Amount">
+            
+          </div>
+          <button id="Donate-noyakali" class=" text-black font-bold px-6 py-2 rounded-lg hover:bg-lime-400 bt-6">
+            Donate Now
+          </button>
+        </div>
+      </div>
+
+      <!-- histroy-section -->
+       
+      
+
+      <!-- card-section-end-here -->
+
+    </main>
+    <script src="js/btn.js"></script>
     
 
     
 </body>
+
 </html>

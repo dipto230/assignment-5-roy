@@ -15,4 +15,61 @@
   }
   .nav-section{
     background:  rgb(249, 247, 243);
+    /* width: 1440px;
+height: 2085px;
+padding: 24px 0px 24px 0px; */
+
   }
+  .main-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  } 
+  /* #donationBtn{
+    width: 157px;
+height: 57px;
+  }
+  #historyBtn{
+    width: 157px;
+    height: 57px;
+
+  } */
+   #pic-1{
+    border-radius: 12px;
+   }
+   .donation-filed{
+    width: 522px;
+height: 56px;
+box-sizing: border-box;
+border: 1px solid rgba(17, 17, 17, 0.1);
+border-radius: 8px;
+background: rgb(255, 255, 255);
+text-align: center;
+   }
+
+   #noyakali-donation-description{
+    color:  rgba(17, 17, 17, 0.7);
+   }
+   #Donate-noyakali{
+    border-radius: 8px;
+    width: 522px;
+height: 57px;
+background: rgb(180, 244, 97);
+margin-top: 10px;
+   }
+   #noyakhali-card{
+    width: 1140px;
+height: 453px;
+box-sizing: border-box;
+border: 1px solid rgba(17, 17, 17, 0.1);
+border-radius: 16px;
+background: rgb(255, 255, 255);
+margin-top: 20px;
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+flex-direction: row;
+margin-left: 150px;
+margin-right: 150px;
+margin-top: 80px;
+   }
