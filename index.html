@@ -8,11 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
     <header class="nav-section">
 
-     <!-- navbar-start-from-here -->
+     
      <div class="navbar bg-base-100">
         <div class="navbar-start">
           <div class="dropdown">
@@ -46,17 +47,18 @@
         </div>
       </div> 
       <!-- navbar-ends-here -->
-    </header>
+    </header> 
 
     <main>
         <div class="main-section space-x-4">
             <button id="donationBtn" class="btn bg-white text-black border-2 border-green-500 w-40 h-14" onclick="toggleButton('donation')">Donation</button>
-            <button id="historyBtn" class="btn bg-white text-black border-2 border-green-500  w-40 h-14" onclick="toggleButton('history')">History</button>
+            <!-- <button id="historyBtn" class="btn bg-white text-black border-2 border-green-500  w-40 h-14" onclick="toggleButton('history')">History</button> -->
+            <button id="historyBtn" class="btn bg-white text-black border-2 border-green-500 w-40 h-14" onclick="window.location.href='history.html'">History</button>
         </div>
 
-     <!-- card-section-start-here -->
+     
 
-     <div id="noyakhali-card" class="flex flex-col md:flex-row border-dotted border-2 border-blue-300 rounded-lg p-6 bg-white">
+     <div id="noyakhali-card" class=" hidden   flex flex-col md:flex-row border-dotted border-2 border-blue-300 rounded-lg p-6 bg-white">
     
         <div class="md:w-1/2">
         <img src="assets/noakhali.png" alt="">
@@ -88,14 +90,11 @@
           <button id="Donate-noyakali" class=" text-black font-bold px-6 py-2 rounded-lg hover:bg-lime-400 bt-6">
             Donate Now
           </button>
+       
+
+          
         </div>
       </div>
-
-      <!-- histroy-section -->
-     
-      
-
-      <!-- card-section-end-here -->
 
     </main>
     <script src="js/btn.js"></script>
@@ -106,3 +105,4 @@
 </body>
 
 </html>
+

@@ -2,64 +2,89 @@ let totalBalance = 5500;
 let donationBalance = 0;
 const history = [];
 
+// DOM elements
 const totalBalanceEl = document.getElementById('total-balance'); 
 const donationBalanceEl = document.getElementById('donation-balance'); 
 const donationAmountEl = document.getElementById('donation-amount');
-const historyListEl = document.getElementById('history-list'); 
+const historyListEl = document.getElementById('historyListEl');  // Corrected ID
 const donationSection = document.getElementById('donation-section');
-const historySection = document.getElementById('history-section');
+const historySection = document.getElementById('historySection'); // Corrected ID
 const donationTab = document.getElementById('donationBtn');
 const historyTab = document.getElementById('historyBtn');
 
+// Donation button event listener
 document.getElementById('Donate-noyakali').addEventListener('click', function(event) {
-    const amount = parseInt(donationAmountEl.value); // Fix the variable name
-    event.preventDefault();
+    const amount = parseInt(donationAmountEl.value); // Parse amount input
+    event.preventDefault(); // Prevent form submission or default behavior
 
     if (isNaN(amount) || amount <= 0 || amount > totalBalance) {
         alert('Please enter a valid donation amount.');
-        return;
+        return; 
     }
     
     // Update balances
     donationBalance += amount;
     totalBalance -= amount;
     
-    // Update the history
+    // Add to history
     const now = new Date();
     history.push({ amount, time: now.toLocaleString() });
     
-    // Update the UI
-    donationBalanceEl.textContent = `${donationBalance} BDT`; // Update the donation balance
-    totalBalanceEl.textContent = `${totalBalance} BDT`; // Update the total balance
+    // Update UI
+    donationBalanceEl.textContent = `${donationBalance} BDT`; // Update donation balance
+    totalBalanceEl.textContent = `${totalBalance} BDT`; // Update total balance
+    
+    donationAmountEl.value = ''; // Clear input field
 
-    // Clear the input field
-    donationAmountEl.value = '';
-
-    // Update the donation history
-    updateHistoryList();
+    renderHistory(); // Update history list
 });
 
-function updateHistoryList() {
-    historyListEl.innerHTML = ''; // Clear the history list
-    history.forEach(entry => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `Donated ${entry.amount} BDT on ${entry.time}`;
-        historyListEl.appendChild(listItem); // Fix the reference here
-    });
+// Tab switching logic for Donation Tab
+donationTab.addEventListener('click', function() {
+    donationSection.classList.remove('hidden');
+     window.location.href='/index.html';
+    historySection.classList.add('hidden'); // Hide history section
+    donationTab.classList.add('bg-lime-400'); // Highlight Donation Tab
+    historyTab.classList.remove('bg-lime-400'); // Remove highlight from History Tab
+});
+
+// Tab switching logic for History Tab
+historyTab.addEventListener('click', function() {
+    donationSection.classList.add('hidden');
+   window.location.href='/histroy.html';
+    historySection.classList.remove('hidden'); // Show history section
+    historyTab.classList.add('bg-lime-400'); // Highlight History Tab
+    donationTab.classList.remove('bg-lime-400'); // Remove highlight from Donation Tab
+
+    renderHistory(); // Render the updated history
+});
+
+// Function to render the history list dynamically
+function renderHistory() {
+    historyListEl.innerHTML = ''; // Clear existing history list
+
+    if (history.length > 0) {
+        history.forEach(item => {
+            const historyItem = document.createElement('div');
+            historyItem.classList.add('bg-gray-200', 'p-2', 'rounded-lg');
+            historyItem.innerHTML = `
+                <p><strong>Date:</strong> ${item.time}</p>
+                <p><strong>Amount:</strong> ${item.amount} BDT</p>
+            `;
+            historyListEl.appendChild(historyItem); // Append history item to list
+        });
+    } else {
+        historyListEl.innerHTML = '<p>No donation history available.</p>'; // Show message if no history
+    }
 }
 
-// Tab switching for donation and history sections
-donationTab.addEventListener('click', () => {
-    donationSection.classList.remove('hidden');
-    historySection.classList.add('hidden');
-    donationTab.classList.add('bg-lime-400');
-    historyTab.classList.remove('bg-lime-400');
-});
 
-historyTab.addEventListener('click', () => {
-    donationSection.classList.add('hidden');
-    historySection.classList.remove('hidden');
-    historyTab.classList.add('bg-lime-400');
-    donationTab.classList.remove('bg-lime-400');
-});
+
+
+
+
+
+
+
+
 
