@@ -37,6 +37,7 @@ document.getElementById('Donate-noyakali').addEventListener('click', function(ev
     donationAmountEl.value = ''; 
 
     renderHistory(); 
+    
 });
 
 
@@ -58,6 +59,7 @@ historyTab.addEventListener('click', function() {
     donationTab.classList.remove('bg-lime-400'); 
   
     renderHistory();
+    
   });
 
 
@@ -111,6 +113,7 @@ document.getElementById('Donate-feni').addEventListener('click', function(event)
 
     // Render the history
     renderHistory(); 
+    
 });
 
 // Modify the renderHistory function to show donation type (Feni or Noakhali)
@@ -167,6 +170,7 @@ document.getElementById('Donate-quota').addEventListener('click', function(event
 
     // Render the history
     renderHistory(); 
+    
 });
 
 // Update the renderHistory function to show donation type for the third section
@@ -190,14 +194,108 @@ function renderHistory() {
 }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('donation-modal');
+    const closeModalButton = document.getElementById('close-modal');
+
+    // Function to open modal
+    function openModal() {
+        modal.classList.remove('hidden'); // Make the modal visible
+    }
+
+    // Function to close modal
+    function closeModal() {
+        modal.classList.add('hidden'); // Hide the modal
+    }
+
+    // Attach the openModal function to each donate button
+    const donateButtons = document.querySelectorAll('button[id^="Donate-quota"]');
+    donateButtons.forEach(button => {
+        button.addEventListener('click', openModal);
+    });
+   
+
+    // Close modal when the close button is clicked
+    closeModalButton.addEventListener('click', closeModal);
+
+    // Optionally, close modal when clicking outside the modal content
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+});
 
 
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('donation-modal');
+    const closeModalButton = document.getElementById('close-modal');
+
+    // Function to open modal
+    function openModal() {
+        modal.classList.remove('hidden'); // Make the modal visible
+    }
+
+    // Function to close modal
+    function closeModal() {
+        modal.classList.add('hidden'); // Hide the modal
+    }
+
+    // Attach the openModal function to each donate button
+    const donateButtons = document.querySelectorAll('button[id^="Donate-noyakali"]');
+    donateButtons.forEach(button => {
+        button.addEventListener('click', openModal);
+    });
+   
+
+    // Close modal when the close button is clicked
+    closeModalButton.addEventListener('click', closeModal);
+
+    // Optionally, close modal when clicking outside the modal content
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+});
 
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('donation-modal');
+    const closeModalButton = document.getElementById('close-modal');
+
+    // Function to open modal
+    function openModal() {
+        modal.classList.remove('hidden'); // Make the modal visible
+    }
+
+    // Function to close modal
+    function closeModal() {
+        modal.classList.add('hidden'); // Hide the modal
+    }
+
+    // Attach the openModal function to each donate button
+    const donateButtons = document.querySelectorAll('button[id^="Donate-feni"]');
+    donateButtons.forEach(button => {
+        button.addEventListener('click', openModal);
+    });
+   
+
+    // Close modal when the close button is clicked
+    closeModalButton.addEventListener('click', closeModal);
+
+    // Optionally, close modal when clicking outside the modal content
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+});
 
 
 
