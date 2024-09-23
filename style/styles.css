@@ -89,3 +89,13 @@ height: 57px;
 background: rgb(180, 244, 97);
 margin-top: 10px;
    }
+
+   .first-section{
+    width: 1140px;
+height: 150px;
+box-sizing: border-box;
+border: 1px solid rgba(17, 17, 17, 0.1);
+border-radius: 16px;
+background: rgb(255, 255, 255);
+margin-top: 20px;
+   }
