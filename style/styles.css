@@ -1,0 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+.lexend {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    
+  }
+
+  #btn-nav{
+    border-radius: 8px;
+    background-color: rgb(180, 244, 97);
+    width: 110px;
+    height: 49px;
+  }
+  .nav-section{
+    background:  rgb(249, 247, 243);
+  }
