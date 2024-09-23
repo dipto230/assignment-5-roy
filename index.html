@@ -40,9 +40,9 @@
            
          </div>
         </div>
-        <div class="navbar-end flex items-center mr-6">
+        <div id="donation-section" class="navbar-end flex items-center mr-6">
           <img src="assets/coin.png" alt="">
-          <p class="font-bold ">5500 BDT</p>
+          <span id="total-balance" class="font-bold ">5500 BDT</span>
         </div>
       </div> 
       <!-- navbar-ends-here -->
@@ -67,7 +67,8 @@
           
           <div class="flex items-center space-x-2 mb-4">
             <img src="assets/coin.png" alt="">
-            <span class="font-semibold text-lg">0 BDT</span>
+            <span id="donation-balance" class="font-semibold text-lg">0 BDT</span>
+            
           </div>
       
           
@@ -81,7 +82,7 @@
           
           <div class="donation-filed">
            
-            <input class="donation-filed" type="text" placeholder="Write Donation Amount">
+            <input id="donation-amount" class="donation-filed" type="number" placeholder="Write Donation Amount">
             
           </div>
           <button id="Donate-noyakali" class=" text-black font-bold px-6 py-2 rounded-lg hover:bg-lime-400 bt-6">
@@ -91,13 +92,14 @@
       </div>
 
       <!-- histroy-section -->
-       
+     
       
 
       <!-- card-section-end-here -->
 
     </main>
     <script src="js/btn.js"></script>
+    <script src="js/donate.js"></script>
     
 
     
