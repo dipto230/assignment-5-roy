@@ -135,6 +135,63 @@ function renderHistory() {
 
 
 
+// Variables for Quota Movement section
+let quotaDonationBalance = 0; // Track donation balance for Quota Movement
+const donationAmountQuotaEl = document.getElementById('donation-amount-quota');
+const donationBalanceQuotaEl = document.getElementById('donation-balance-quota');
+
+// Event listener for the Quota Movement donation button
+document.getElementById('Donate-quota').addEventListener('click', function(event) {
+    const amount = parseInt(donationAmountQuotaEl.value); 
+    event.preventDefault(); 
+
+    if (isNaN(amount) || amount <= 0 || amount > totalBalance) {
+        alert('Please enter a valid donation amount.');
+        return; 
+    }
+    
+    // Update the balances
+    quotaDonationBalance += amount;
+    totalBalance -= amount;
+    
+    // Add the donation to the history
+    const now = new Date();
+    history.push({ amount, time: now.toLocaleString(), donationType: 'Quota Movement' });
+    
+    // Update the displayed balances
+    donationBalanceQuotaEl.textContent = `${quotaDonationBalance} BDT`; 
+    totalBalanceEl.textContent = `${totalBalance} BDT`; 
+    
+    // Clear the input field
+    donationAmountQuotaEl.value = ''; 
+
+    // Render the history
+    renderHistory(); 
+});
+
+// Update the renderHistory function to show donation type for the third section
+function renderHistory() {
+    historyListEl.innerHTML = ''; 
+
+    if (history.length > 0) {
+        history.forEach(item => {
+            const historyItem = document.createElement('div');
+            historyItem.classList.add('bg-gray-200', 'p-2', 'rounded-lg');
+            historyItem.innerHTML = `
+                <p><strong>Date:</strong> ${item.time}</p>
+                <p><strong>Amount:</strong> ${item.amount} BDT</p>
+                <p><strong>Donation Type:</strong> ${item.donationType}</p>
+            `;
+            historyListEl.appendChild(historyItem);
+        });
+    } else {
+        historyListEl.innerHTML = '<p>No donation history available.</p>'; 
+    }
+}
+
+
+
+
 
 
 
