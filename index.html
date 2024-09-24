@@ -53,8 +53,8 @@
       <!-- navbar-ends-here -->
     </header> 
 
-    <main>
-        <div class="main-section space-x-4">
+    <main class="px-4 sm:px-8 md:px-16">
+        <div class="main-section flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-4 ">
             <button id="donationBtn" class="btn bg-white text-black border-2 border-green-500 w-40 h-14" onclick="toggleButton('donation')">Donation</button>
           <a href="histroy.html">
             <button id="historyBtn" class="btn bg-white text-black border-2 border-green-500  w-40 h-14" onclick="toggleButton('history')">History</button> 
@@ -66,10 +66,10 @@
      
 
     <div id="noyakhali-card" class=" hidden   flex flex-col md:flex-row border-dotted border-2 border-blue-300 rounded-lg p-6 bg-white">
-        <div class="md:w-1/2">
-        <img src="assets/noakhali.png" alt="">
+        <div class="md:w-1/2 w-full">
+        <img class="w-full h-auto"   src="assets/noakhali.png" alt="">
         </div>
-        <div class="md:w-1/2 md:pl-6 mt-6 md:mt-0">
+        <div class=" w-full md:w-1/2 md:pl-6 mt-6 md:mt-0">
           <div class="flex items-center space-x-2 mb-4">
             <img src="assets/coin.png" alt="">
             <span id="donation-balance" class="font-semibold text-lg">0 BDT</span>
@@ -88,10 +88,10 @@
         </div>
       </div >
       <div id="noyakhali-card" class=" hidden   flex flex-col md:flex-row border-dotted border-2 border-blue-300 rounded-lg p-6 bg-white">
-        <div class="md:w-1/2">
-        <img  class="w-[500px] h-[400px]"  src="assets/feni.png" alt="">
+        <div class="w-full md:w-1/2">
+        <img  class=" w-[500px] h-[400px]"  src="assets/feni.png" alt="">
         </div>
-        <div class="md:w-1/2 md:pl-6 mt-6 md:mt-0">
+        <div class=" w-full  md:w-1/2 md:pl-6 mt-6 md:mt-0">
           <div class="flex items-center space-x-2 mb-4">
             <img src="assets/coin.png" alt="">
             <span id="donation-balance-feni" class="font-semibold text-lg">0 BDT</span>
@@ -101,9 +101,9 @@
         The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.
           </p>
        <div class="donation-filed">
-           <input id="donation-amount-feni" class="donation-filed" type="number" placeholder="Write Donation Amount">
+           <input id="donation-amount-feni" class="donation-filed w-full mb-4 p-2 border   " type="number" placeholder="Write Donation Amount">
              </div>
-          <button id="Donate-feni" class=" text-black font-bold px-6 py-2 rounded-lg hover:bg-lime-400 bt-6">
+          <button id="Donate-feni" class=" text-black font-bold px-6 py-2 rounded-lg hover:bg-lime-400 bt-6  w-full">
             Donate Now
           </button>      
         </div>
@@ -117,10 +117,10 @@
         </div>
       </div >
       <div id="noyakhali-card" class=" hidden   flex flex-col md:flex-row border-dotted border-2 border-blue-300 rounded-lg p-6 bg-white">
-        <div class="md:w-1/2">
+        <div class=" w-full md:w-1/2">
         <img  class="w-[500px] h-[400px]"  src="assets/quota-protest.png" alt="">
         </div>
-        <div class="md:w-1/2 md:pl-6 mt-6 md:mt-0">
+        <div class="w-full   md:w-1/2 md:pl-6 mt-6 md:mt-0">
           <div class="flex items-center space-x-2 mb-4">
             <img src="assets/coin.png" alt="">
             <span id="donation-balance-quota" class="font-semibold text-lg">0 BDT</span>
@@ -130,9 +130,9 @@
         The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.
           </p>
        <div class="donation-filed">
-           <input id="donation-amount-quota" class="donation-filed" type="number" placeholder="Write Donation Amount">
+           <input id="donation-amount-quota" class="donation-filed w-full mb-4 p-2 border   " type="number" placeholder="Write Donation Amount">
              </div>
-          <button id="Donate-quota" class=" text-black font-bold px-6 py-2 rounded-lg hover:bg-lime-400 bt-6">
+          <button id="Donate-quota" class=" text-black font-bold px-6 py-2 rounded-lg hover:bg-lime-400 bt-6  w-full  ">
             Donate Now
           </button> 
          
