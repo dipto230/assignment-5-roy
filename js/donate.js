@@ -81,12 +81,12 @@ function renderHistory() {
     }
 }
 
-// Variables for Feni section
-let feniDonationBalance = 0; // Track donation balance for Feni
+
+let feniDonationBalance = 0; 
 const donationAmountFeniEl = document.getElementById('donation-amount-feni');
 const donationBalanceFeniEl = document.getElementById('donation-balance-feni');
 
-// Event listener for the Feni donation button
+
 document.getElementById('Donate-feni').addEventListener('click', function(event) {
     const amount = parseInt(donationAmountFeniEl.value); 
     event.preventDefault(); 
@@ -95,28 +95,27 @@ document.getElementById('Donate-feni').addEventListener('click', function(event)
         alert('Please enter a valid donation amount.');
         return; 
     }
-    
-    // Update the balances
+
     feniDonationBalance += amount;
     totalBalance -= amount;
     
-    // Add the donation to the history
+    
     const now = new Date();
     history.push({ amount, time: now.toLocaleString(), donationType: 'Feni' });
     
-    // Update the displayed balances
+    
     donationBalanceFeniEl.textContent = `${feniDonationBalance} BDT`; 
     totalBalanceEl.textContent = `${totalBalance} BDT`; 
     
-    // Clear the input field
+    
     donationAmountFeniEl.value = ''; 
 
-    // Render the history
+    
     renderHistory(); 
     
 });
 
-// Modify the renderHistory function to show donation type (Feni or Noakhali)
+
 function renderHistory() {
     historyListEl.innerHTML = ''; 
 
@@ -138,12 +137,12 @@ function renderHistory() {
 
 
 
-// Variables for Quota Movement section
-let quotaDonationBalance = 0; // Track donation balance for Quota Movement
+
+let quotaDonationBalance = 0; 
 const donationAmountQuotaEl = document.getElementById('donation-amount-quota');
 const donationBalanceQuotaEl = document.getElementById('donation-balance-quota');
 
-// Event listener for the Quota Movement donation button
+
 document.getElementById('Donate-quota').addEventListener('click', function(event) {
     const amount = parseInt(donationAmountQuotaEl.value); 
     event.preventDefault(); 
@@ -153,27 +152,27 @@ document.getElementById('Donate-quota').addEventListener('click', function(event
         return; 
     }
     
-    // Update the balances
+    
     quotaDonationBalance += amount;
     totalBalance -= amount;
     
-    // Add the donation to the history
+    
     const now = new Date();
     history.push({ amount, time: now.toLocaleString(), donationType: 'Quota Movement' });
     
-    // Update the displayed balances
+    
     donationBalanceQuotaEl.textContent = `${quotaDonationBalance} BDT`; 
     totalBalanceEl.textContent = `${totalBalance} BDT`; 
     
-    // Clear the input field
+    
     donationAmountQuotaEl.value = ''; 
 
-    // Render the history
+    
     renderHistory(); 
     
 });
 
-// Update the renderHistory function to show donation type for the third section
+
 function renderHistory() {
     historyListEl.innerHTML = ''; 
 
@@ -198,27 +197,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('donation-modal');
     const closeModalButton = document.getElementById('close-modal');
 
-    // Function to open modal
+    
     function openModal() {
-        modal.classList.remove('hidden'); // Make the modal visible
+        modal.classList.remove('hidden'); 
     }
 
-    // Function to close modal
+    
     function closeModal() {
-        modal.classList.add('hidden'); // Hide the modal
+        modal.classList.add('hidden');
     }
 
-    // Attach the openModal function to each donate button
+    
     const donateButtons = document.querySelectorAll('button[id^="Donate-quota"]');
     donateButtons.forEach(button => {
         button.addEventListener('click', openModal);
     });
    
 
-    // Close modal when the close button is clicked
+    
     closeModalButton.addEventListener('click', closeModal);
 
-    // Optionally, close modal when clicking outside the modal content
+    
     modal.addEventListener('click', (event) => {
         if (event.target === modal) {
             closeModal();
@@ -234,27 +233,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('donation-modal');
     const closeModalButton = document.getElementById('close-modal');
 
-    // Function to open modal
+    
     function openModal() {
-        modal.classList.remove('hidden'); // Make the modal visible
+        modal.classList.remove('hidden'); 
     }
 
-    // Function to close modal
+    
     function closeModal() {
-        modal.classList.add('hidden'); // Hide the modal
+        modal.classList.add('hidden'); 
     }
 
-    // Attach the openModal function to each donate button
+
     const donateButtons = document.querySelectorAll('button[id^="Donate-noyakali"]');
     donateButtons.forEach(button => {
         button.addEventListener('click', openModal);
     });
    
 
-    // Close modal when the close button is clicked
+    
     closeModalButton.addEventListener('click', closeModal);
 
-    // Optionally, close modal when clicking outside the modal content
+    
     modal.addEventListener('click', (event) => {
         if (event.target === modal) {
             closeModal();
@@ -269,27 +268,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('donation-modal');
     const closeModalButton = document.getElementById('close-modal');
 
-    // Function to open modal
+    
     function openModal() {
-        modal.classList.remove('hidden'); // Make the modal visible
+        modal.classList.remove('hidden'); 
     }
 
-    // Function to close modal
+    
     function closeModal() {
-        modal.classList.add('hidden'); // Hide the modal
+        modal.classList.add('hidden'); 
     }
 
-    // Attach the openModal function to each donate button
+    
     const donateButtons = document.querySelectorAll('button[id^="Donate-feni"]');
     donateButtons.forEach(button => {
         button.addEventListener('click', openModal);
     });
    
 
-    // Close modal when the close button is clicked
+    
     closeModalButton.addEventListener('click', closeModal);
 
-    // Optionally, close modal when clicking outside the modal content
+    
     modal.addEventListener('click', (event) => {
         if (event.target === modal) {
             closeModal();
