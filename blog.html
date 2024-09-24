@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOG</title>
     <link rel="stylesheet" href="style/styles.css">
-   
+    <link rel="stylesheet" href="style/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <main>
+    <main class="blog-section">
         <div class="first-section">
-            <h2> What is the Document Object Model (DOM)?</h2>
-            <p>The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as a tree of nodes, where each node corresponds to a part of the document (e.g., an element, attribute, or piece of text).</p>
+            <h2 class="text-black font-bold"> What is the Document Object Model (DOM)?</h2>
+            <p class="text-black">The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as a tree of nodes, where each node corresponds to a part of the document (e.g., an element, attribute, or piece of text).</p>
         </div>
         <div class="first-section">
-            <h2>  How do you select an element from the DOM?</h2>
-            <p>To select an element from the DOM, you can use methods like `document.getElementById()` to select by ID, `document.getElementsByClassName()` to select by class name, or `document.querySelector()` and `document.querySelectorAll()` for more general and flexible selection using CSS selectors.</p>
+            <h2 class="text-black font-bold">  How do you select an element from the DOM?</h2>
+            <p class="text-black"> To select an element from the DOM, you can use methods like `document.getElementById()` to select by ID, `document.getElementsByClassName()` to select by class name, or `document.querySelector()` and `document.querySelectorAll()` for more general and flexible.</p>
+           
         </div>
         <div class="first-section">
-            <h2> What is event delegation in the context of the DOM, and why is it useful?</h2>
-            <p>Event delegation is a technique in which a single event listener is added to a parent element to manage events for multiple child elements. Instead of attaching separate listeners to each child element, you delegate the event to the parent. This is useful for better performance and handling dynamic content where child elements may be added or removed.</p>
+            <h2 class="text-black font-bold"> What is event delegation in the context of the DOM, and why is it useful?</h2>
+            <p class="text-black">Event delegation is a technique in which a single event listener is added to a parent element to manage events for multiple child elements. Instead of attaching separate listeners to each child element, you delegate the event to the parent. This is useful for better performance and handling dynamic content where child elements may be added or removed.</p>
         </div>
         <div class="first-section">
-            <h2> How do you manipulate an element's attributes and styles using the DOM?</h2>
-            <p> To manipulate an element's attributes, you can use methods like `setAttribute()` and `getAttribute()`. To change an element's styles, you can directly modify the `style` property (e.g., `element.style.color = 'red';`). You can also add or remove CSS classes using `classList.add()` or `classList.remove()`.</p>
+            <h2 class="text-black font-bold"> How do you manipulate an element's attributes and styles using the DOM?</h2>
+            <p class="text-black"> To manipulate an element's attributes, you can use methods like `setAttribute()` and `getAttribute()`. To change an element's styles, you can directly modify the `style` property (e.g., `element.style.color = 'red';`). You can also add or remove CSS classes using `classList.add()` or `classList.remove()`.</p>
         </div>
     </main>
 </body>

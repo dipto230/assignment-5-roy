@@ -173,3 +173,9 @@ margin-top: 20px;
   color: #6b7280; /* Tailwind's text-gray-500 equivalent */
   font-size: 14px;
 }
+.blog-section{
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
