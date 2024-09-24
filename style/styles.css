@@ -147,3 +147,29 @@ margin-top: 20px;
     align-items: center;
     margin-left: 210px;
 }
+
+#historyListEl{
+  margin-top: 40px;
+}
+.history-item {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 16px;
+}
+
+.history-item p {
+  margin: 0;
+}
+
+.history-item .amount {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.history-item .time {
+  color: #6b7280; /* Tailwind's text-gray-500 equivalent */
+  font-size: 14px;
+}

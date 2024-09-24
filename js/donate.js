@@ -28,7 +28,11 @@ document.getElementById('Donate-noyakali').addEventListener('click', function(ev
     
    
     const now = new Date();
-    history.push({ amount, time: now.toLocaleString() });
+    history.push({ amount, time: now.toLocaleString(), donationType: 'Taka is Donated for famine-2024 at Noyakali,Bangladesh' });
+    
+    
+    localStorage.setItem('donationHistory', JSON.stringify(history));
+    
     
    
     donationBalanceEl.textContent = `${donationBalance} BDT`; 
@@ -80,6 +84,13 @@ function renderHistory() {
         historyListEl.innerHTML = '<p>No donation history available.</p>'; 
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const storedHistory = JSON.parse(localStorage.getItem('donationHistory'));
+    if (storedHistory) {
+        storedHistory.forEach(item => history.push(item));
+    }
+    renderHistory();
+});
 
 
 let feniDonationBalance = 0; 
@@ -101,7 +112,10 @@ document.getElementById('Donate-feni').addEventListener('click', function(event)
     
     
     const now = new Date();
-    history.push({ amount, time: now.toLocaleString(), donationType: 'Feni' });
+    history.push({ amount, time: now.toLocaleString(), donationType: 'Taka is Dinated For Flood Relif Feni,Bangladesh' });
+    
+    
+    localStorage.setItem('donationHistory', JSON.stringify(history));
     
     
     donationBalanceFeniEl.textContent = `${feniDonationBalance} BDT`; 
@@ -134,6 +148,13 @@ function renderHistory() {
         historyListEl.innerHTML = '<p>No donation history available.</p>'; 
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const storedHistory = JSON.parse(localStorage.getItem('donationHistory'));
+    if (storedHistory) {
+        storedHistory.forEach(item => history.push(item));
+    }
+    renderHistory();
+});
 
 
 
@@ -156,9 +177,11 @@ document.getElementById('Donate-quota').addEventListener('click', function(event
     quotaDonationBalance += amount;
     totalBalance -= amount;
     
-    
     const now = new Date();
-    history.push({ amount, time: now.toLocaleString(), donationType: 'Quota Movement' });
+    history.push({ amount, time: now.toLocaleString(), donationType: 'Taka is Donated for Aid for injured in the Quota Movement,Bangladesh' });
+    
+    
+    localStorage.setItem('donationHistory', JSON.stringify(history));
     
     
     donationBalanceQuotaEl.textContent = `${quotaDonationBalance} BDT`; 
@@ -223,6 +246,13 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const storedHistory = JSON.parse(localStorage.getItem('donationHistory'));
+    if (storedHistory) {
+        storedHistory.forEach(item => history.push(item));
+    }
+    renderHistory();
 });
 
 

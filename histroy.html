@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation History</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link rel="stylesheet" href="style/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- <header class="p-4 bg-gray-200">
+        <h1 class="text-2xl font-bold">Donation History</h1>
+    </header> -->
+
+    <header class="  nav-section sticky top-0 bg-white bg-opacity-75 z-50 shadow-md">
+      
+     
+        <div class="navbar bg-base-100">
+           <div class="navbar-start">
+             <div class="dropdown">
+               <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                 <svg
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="h-5 w-5"
+                   fill="none"
+                   viewBox="0 0 24 24"
+                   stroke="currentColor">
+                   <path
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     stroke-width="2"
+                     d="M4 6h16M4 12h8m-8 6h16" />
+                 </svg>
+               </div>  
+             </div>
+             <a href="blog.html" target="_blank">
+   
+               <button id="btn-nav" class="btn btn-lg font-bold text-black ml-6 mt-4">Blog</button>
+             </a>
+           </div>
+           <div class="navbar-center hidden lg:flex">
+            <div class="flex items-center">
+               <img  src="assets/logo.png" alt="">
+               <p class="font-bold mt-4 ml-4"  >DONATE BANGLADESH</p>
+              
+            </div>
+           </div>
+           <div id="donation-section" class="navbar-end flex items-center mr-6">
+             <img src="assets/coin.png" alt="">
+             <span id="total-balance" class="font-bold ">5500 BDT</span>
+           </div>
+         </div> 
+         <!-- navbar-ends-here -->
+       </header> 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main class="p-6">
+
+        <div class="main-section space-x-4">
+          <a href="index.html">
+            <button id="donationBtn" class="btn bg-white text-black border-2 border-green-500 w-40 h-14" onclick="toggleButton('donation')">Donation</button>
+          </a>
+          <a href="histroy.html">
+            <button id="historyBtn" class="btn bg-white text-black border-2 border-green-500  w-40 h-14" onclick="toggleButton('history')">History</button> 
+
+          </a>
+                      
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="historyListEl" class="space-y-4">
+            <!-- History items will be injected here -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function renderHistory() {
+                const historyListEl = document.getElementById('historyListEl');
+                const storedHistory = JSON.parse(localStorage.getItem('donationHistory')) || [];
+
+                historyListEl.innerHTML = ''; // Clear the list
+
+                if (storedHistory.length > 0) {
+                    storedHistory.forEach(item => {
+                        const historyItem = document.createElement('div');
+                        historyItem.classList.add('bg-gray-200', 'p-4', 'rounded-lg');
+                        historyItem.innerHTML = `
+                            <p><strong>Date:</strong> ${item.time}</p>
+                            <p><strong>Amount:</strong> ${item.amount} BDT</p>
+                            <p><strong>Donation Type:</strong> ${item.donationType}</p>
+                        `;
+                        historyListEl.appendChild(historyItem);
+                    });
+                } else {
+                    historyListEl.innerHTML = '<p>No donation history available.</p>';
+                }
+            }
+
+            renderHistory(); // Call the function to render the history
+        });
+    </script>
+    <script src="js/btn.js"></script>
+</body>
+</html>
